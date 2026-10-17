@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Atul Kumar — Full-Stack Developer & AI Enthusiast</title>
+    <meta name="title" content="Atul Kumar — Full-Stack Developer & AI Enthusiast" />
+    <meta name="description" content="Personal developer portfolio of Atul Kumar — Computer Science & Communication Engineering student at KIIT. Building full-stack platforms, AI-assisted tools, and thoughtful digital products." />
+    <meta name="theme-color" content="#0A0A0A" id="theme-color-meta" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://atulkumar.dev/" />
+    <meta property="og:title" content="Atul Kumar — Full-Stack Developer & AI Enthusiast" />
+    <meta property="og:description" content="Turning complex ideas into useful, thoughtfully engineered products — from full-stack platforms to AI-powered applications." />
+    <meta property="og:image" content="/images/og-preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Atul Kumar — Full-Stack Developer & AI Enthusiast" />
+    <meta property="twitter:description" content="Turning complex ideas into useful, thoughtfully engineered products — from full-stack platforms to AI-powered applications." />
+
+    <!-- Immediate Theme Initialization (Prevent FOUC) -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('portfolio-theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = stored ? stored : (prefersDark ? 'dark' : 'dark'); // Default to dark aesthetic
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-white dark:bg-[#0A0A0A] text-[#111827] dark:text-[#F5F5F5] font-sans antialiased selection:bg-[#A3E635]/30 selection:text-[#1F2937] dark:selection:bg-[#A3E635]/20 dark:selection:text-[#BEF264] overflow-x-hidden min-h-screen transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

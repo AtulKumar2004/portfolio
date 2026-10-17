@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for dark mode */
+  html.dark ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  html.dark ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 3px;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+  }
+
+  /* Custom scrollbar for light mode */
+  html:not(.dark) ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-track {
+    background: #F4F4F5;
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-thumb {
+    background: #D4D4D8;
+    border-radius: 3px;
+  }
+
+  html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+    background: #A1A1AA;
+  }
+}
+
+@layer utilities {
+  /* Subtle dark editorial grid overlay */
+  html.dark .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  /* Subtle light editorial grid overlay */
+  html:not(.dark) .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  }
+
+  /* Subtle radial vignette for dark mode */
+  html.dark .radial-vignette {
+    background: radial-gradient(circle at 50% 0%, rgba(163, 230, 53, 0.035) 0%, transparent 70%);
+  }
+
+  /* Subtle radial vignette for light mode */
+  html:not(.dark) .radial-vignette {
+    background: radial-gradient(circle at 50% 0%, rgba(101, 163, 13, 0.035) 0%, transparent 70%);
+  }
+
+  /* Text balance utility */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
