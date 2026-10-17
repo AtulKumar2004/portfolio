@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Layers, CheckCircle2, Terminal } from 'lucide-react';
+import { X, ExternalLink, Layers, CheckCircle2, Terminal, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from '../ui/Icons';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
@@ -157,7 +157,22 @@ export default function ProjectModal({ project, onClose }) {
             {project.stats}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+            {project.liveUrl && (
+              <Button
+                as="a"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                size="sm"
+                icon={ArrowUpRight}
+                iconPosition="right"
+              >
+                Live Preview
+              </Button>
+            )}
+
             {project.githubUrl && (
               <Button
                 as="a"

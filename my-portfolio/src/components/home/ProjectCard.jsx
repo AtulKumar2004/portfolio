@@ -68,16 +68,30 @@ export default function ProjectCard({ project, onSelect, index }) {
               </h3>
             </div>
 
-            {/* Explore trigger button */}
-            <button
-              type="button"
-              onClick={() => onSelect(project)}
-              className="w-9 h-9 rounded-full bg-[#F4F4F5] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2B2B2B] flex items-center justify-center text-[#4B5563] dark:text-[#A3A3A3] group-hover:text-[#4D7C0F] dark:group-hover:text-[#A3E635] group-hover:border-[#84CC16]/40 dark:group-hover:border-[#A3E635]/40 group-hover:bg-[#84CC16]/10 dark:group-hover:bg-[#A3E635]/10 transition-all duration-200 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84CC16] dark:focus-visible:ring-[#A3E635] cursor-pointer"
-              title={`View ${project.title} details`}
-              aria-label={`View ${project.title} details`}
-            >
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
+            {/* Live project URL trigger button */}
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#F4F4F5] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2B2B2B] flex items-center justify-center text-[#4B5563] dark:text-[#A3A3A3] hover:text-[#4D7C0F] dark:hover:text-[#A3E635] hover:border-[#84CC16]/50 dark:hover:border-[#A3E635]/50 hover:bg-[#84CC16]/15 dark:hover:bg-[#A3E635]/15 transition-all duration-200 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84CC16] dark:focus-visible:ring-[#A3E635] cursor-pointer"
+                title={`Open live site for ${project.title}`}
+                aria-label={`Open live site for ${project.title}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onSelect(project)}
+                className="w-9 h-9 rounded-full bg-[#F4F4F5] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2B2B2B] flex items-center justify-center text-[#4B5563] dark:text-[#A3A3A3] group-hover:text-[#4D7C0F] dark:group-hover:text-[#A3E635] group-hover:border-[#84CC16]/40 dark:group-hover:border-[#A3E635]/40 group-hover:bg-[#84CC16]/10 dark:group-hover:bg-[#A3E635]/10 transition-all duration-200 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84CC16] dark:focus-visible:ring-[#A3E635] cursor-pointer"
+                title={`View ${project.title} details`}
+                aria-label={`View ${project.title} details`}
+              >
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            )}
           </div>
 
           {/* Description */}
